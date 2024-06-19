@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_authentication/components/my_textfield.dart';
 import 'package:flutter_authentication/components/signin_button.dart';
+import 'package:flutter_authentication/components/square_tile.dart';
 
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});
@@ -19,6 +20,7 @@ class LoginPage extends StatelessWidget {
       body: SafeArea(
         child: Center(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const SizedBox(
                 height: 50,
@@ -92,7 +94,7 @@ class LoginPage extends StatelessWidget {
               ),
 
               const SizedBox(
-                height: 25,
+                height: 50,
               ),
 
               //or continue with
@@ -123,9 +125,50 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
 
+              const SizedBox(
+                height: 50,
+              ),
+
               //google + apple sign in
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: const [
+                  //google button
+                  SquareTile(imagePath: 'lib/images/google.png'),
+
+                  SizedBox(
+                    width: 10,
+                  ),
+
+                  //apple button
+                  SquareTile(imagePath: 'lib/images/apple.png'),
+                ],
+              ),
+
+              const SizedBox(
+                height: 50,
+              ),
 
               //not a member? register now
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Not a member?',
+                    style: TextStyle(
+                      color: Colors.grey[700],
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 4,
+                  ),
+                  Text(
+                    'Register now',
+                    style: TextStyle(
+                        color: Colors.blue, fontWeight: FontWeight.bold),
+                  ),
+                ],
+              ),
             ],
           ),
         ),
